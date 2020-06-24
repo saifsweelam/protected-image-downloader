@@ -51,4 +51,4 @@ module.exports = { scrapeProduct, scrapeID }
 // scrapeProduct('https://www.facebook.com/photo.php?fbid=345435083105571&id=100029172463688&set=a.109024950079920&refid=13&__tn__=%2B%3E', '//*[@id="u_0_e"]/div[1]/img', console.log)
 // scrapeProduct('https://www.facebook.com/photo/?fbid=345435083105571&set=a.109024950079920', '//*[@id="u_0_e"]/div[1]/img')
 // scrapeProduct('https://www.facebook.com/photo?fbid=135191771084949&set=a.100145354589591', '//*[@id="u_0_e"]/div[1]/img')
-scrapeProduct('https://www.instagram.com/p/B816V4Zgz1r/', '//*[@id="react-root"]/section/main/div/div/article/div[1]/div/div/div[1]/div[1]/img', console.log, console.log)
+// scrapeProduct('https://www.instagram.com/p/B816V4Zgz1r/', '//*[@id="react-root"]/section/main/div/div/article/div[1]/div/div/div[1]/div[1]/img', console.log, console.log)
