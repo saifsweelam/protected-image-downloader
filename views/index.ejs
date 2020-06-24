@@ -1,0 +1,41 @@
+<%- include('partials/header.ejs') %>
+
+<section id="choose-icons">
+    <h2>Choose website</h2>
+    <div class="d-flex">
+        <div class="col-md-6"><i class="fab fa-facebook display-1 choice-icon" style="color: #4267B2;"
+                data-website="facebook"></i></div>
+        <div class="col-md-6"><i class="fab fa-instagram display-1 choice-icon" style="color: #C13584;"
+                data-website="instagram"></i></div>
+    </div>
+</section>
+
+<section id="facebook" class="website-form-section">
+    <form name="fb-form" action="#" method="get" class="pt-5">
+        <label class="my-1 mr-2" for="url-type-select">URL Type</label>
+        <select class="custom-select my-1 mr-sm-2" id="url-type-select" required>
+            <option value="" selected disabled hidden>Choose...</option>
+            <option value="picture">Picture Page</option>
+            <option value="profile">Profile URL</option>
+        </select>
+        <div class="form-group">
+            <label for="fb-url">Enter URL</label>
+            <input type="text" class="form-control" id="fb-url" name="url" placeholder="Enter URL" required>
+        </div>
+        <input type="submit" value="Get Image" class="btn btn-primary d-block m-auto">
+    </form>
+</section>
+<section id="instagram" class="website-form-section">
+    <form name="insta-form" action="#" method="get" class="pt-5">
+        <div class="form-group">
+            <label for="insta-url">Enter Post URL</label>
+            <input type="text" class="form-control" id="insta-url" name="url" placeholder="Enter URL" required>
+            <p>Please note that post needs to be in a public account.</p>
+        </div>
+        <input type="submit" value="Get Image" class="btn btn-primary d-block m-auto">
+    </form>
+</section>
+
+<section id="results" class="text center"></section>
+
+<%- include('partials/footer.ejs') %>
