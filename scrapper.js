@@ -10,11 +10,11 @@ async function scrapeProduct(url, xpath, callback, err) {
         const [el] = await page.$x(xpath);
         const src = await (await el.getProperty('src')).jsonValue();
 
-        await browser.close()
+        await browser.close();
 
-        callback(src)
+        callback(src);
     } catch (e) {
-        err(e)
+        err(e);
     }
 }
 
@@ -32,11 +32,11 @@ async function scrapeID(url, callback, err) {
 
         await pendingXHR.waitForAllXhrFinished();
 
-        const [el] = await page.$x('//*[@id="home"]/div[2]/div[1]/b')
+        const [el] = await page.$x('//*[@id="home"]/div[2]/div[1]/b');
         const id = await (await el.getProperty('textContent')).jsonValue();
-        
-        await browser.close()
-        
+
+        await browser.close();
+
         callback(id);
 
     } catch (e) {

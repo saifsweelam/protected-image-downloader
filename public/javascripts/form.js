@@ -28,7 +28,7 @@ const parseResult = result => {
     formSections.forEach(section => { section.style.display = 'none' });
     resultSection.innerHTML = `
     <h3>Got image successfully</h3>
-    <img src="${result}" class="mw-10 0" alt="Wanted Image">
+    <img src="${result}" class="mw-100" alt="Wanted Image">
     <a download href="${result}" class="btn btn-primary w-50 d-block ml-auto mr-auto mt-3 mb-3">Download</a>
     <a href="/" class="btn btn-primary w-50 d-block ml-auto mr-auto mt-3 mb-3">Try Again</a>
     `;
