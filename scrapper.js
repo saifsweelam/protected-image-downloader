@@ -3,7 +3,7 @@ const { PendingXHR } = require('pending-xhr-puppeteer')
 
 async function scrapeProduct(url, xpath, callback, err) {
     try {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.goto(url);
 
@@ -21,7 +21,7 @@ async function scrapeProduct(url, xpath, callback, err) {
 
 async function scrapeID(url, callback, err) {
     try {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         const pendingXHR = new PendingXHR(page);
         await page.goto('https://fb-search.com/find-my-facebook-id');
