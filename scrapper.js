@@ -25,6 +25,8 @@ async function scrapeID(url, callback, err) {
         const page = await browser.newPage();
         const pendingXHR = new PendingXHR(page);
         await page.goto('https://fb-search.com/find-my-facebook-id');
+        let bodyHTML = await page.evaluate(() => document.body.innerHTML);
+        console.log(bodyHTML)
 
         await page.focus('#home > div > input');
         await page.keyboard.type(url);
