@@ -9,12 +9,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/img-page', ({ query }, res) => {
-    scrapper.scrapeProduct(query.url, query.path, result => res.status(200).send(result), console.log);
+    scrapper.scrapeProduct(query.url, query.path, result => res.status(200).send(result), err => res.status(404).send({error: err}));
 })
 
 
 router.get('/id', ({ query }, res) => {
-    scrapper.scrapeID(query.url, result => res.status(200).send(result), console.log);
+    scrapper.scrapeID(query.url, result => res.status(200).send(result), err => res.status(404).send({error: err}));
 })
 
 
