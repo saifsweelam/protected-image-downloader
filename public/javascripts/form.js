@@ -19,6 +19,7 @@ const errorHandler = err => {
     <p>May be there's a problem with your URL or we don't have access to it. Sometimes this is because our server is busy.</p>
     <a href="/" class="btn btn-primary w-50 d-block ml-auto mr-auto mt-3 mb-3">Try Again</a>
     <p class="h6">${JSON.stringify(err)}</p>
+    <img src="/images/insta.png" class="mw-100" alt="Wanted Image">
     `
 }
 
