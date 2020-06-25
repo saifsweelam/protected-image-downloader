@@ -79,13 +79,13 @@ instagramForm.addEventListener('submit', e => {
     let url = document.querySelector('#insta-url').value;
     url.startsWith('https://') || url.startsWith('http://') || (url = `https://${url}`);
 
-    let xpath = '//*[@id="react-root"]/section/main/div/div/article/div[1]/div/div/div[1]/div[1]/img';
-
+    let xpath = '//*[@id="react-root"]/section/main/div/div/article/div[1]/div/div/div[1]/img';
+    
     $.ajax({
         url: `/img-page?path=${xpath}&url=${url}`,
         success: parseResult,
         error: () => {
-            xpath = '//*[@id="react-root"]/section/main/div/div/article/div[1]/div/div/div[1]/img'
+            xpath = '//*[@id="react-root"]/section/main/div/div/article/div[1]/div/div/div[1]/div[1]/img';
             $.ajax({
                 url: `/img-page?path=${xpath}&url=${url}`,
                 success: parseResult,

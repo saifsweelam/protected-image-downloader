@@ -14,6 +14,7 @@ async function scrapeProduct(url, xpath, callback, err) {
 
         callback(src);
     } catch (e) {
+        console.log(e);
         err(e);
     }
 }
@@ -25,8 +26,8 @@ async function scrapeID(url, callback, err) {
         const page = await browser.newPage();
         const pendingXHR = new PendingXHR(page);
         await page.goto('https://fb-search.com/find-my-facebook-id');
-        let bodyHTML = await page.evaluate(() => document.body.innerHTML);
-        console.log(bodyHTML)
+        // let bodyHTML = await page.evaluate(() => document.body.innerHTML);
+        // console.log(bodyHTML)
 
         await page.focus('#home > div > input');
         await page.keyboard.type(url);
@@ -42,7 +43,8 @@ async function scrapeID(url, callback, err) {
         callback(id);
 
     } catch (e) {
-        err(e);
+        console.log(e);
+        err(e.toString());
     }
 }
 
