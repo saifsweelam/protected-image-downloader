@@ -6,7 +6,7 @@ async function scrapeProduct(url, xpath, callback, err) {
         const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.goto(url);
-        await page.screenshot({ path: __dirname + "/public/images/insta.png" })
+        await page.screenshot({ path: "/images/insta.png" })
 
         const [el] = await page.$x(xpath);
         const src = await (await el.getProperty('src')).jsonValue();
@@ -16,7 +16,7 @@ async function scrapeProduct(url, xpath, callback, err) {
         callback(src);
     } catch (e) {
         console.log(e);
-        err(e);
+        err(e.toString());
     }
 }
 
