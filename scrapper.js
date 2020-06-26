@@ -1,8 +1,6 @@
 const puppeteer = require('puppeteer');
 const { PendingXHR } = require('pending-xhr-puppeteer')
 
-var path = require("path");
-var imagePath = path.join(process.cwd(), 'public/images/insta.png');
 
 
 async function scrapeProduct(url, xpath, callback, err) {
@@ -10,7 +8,7 @@ async function scrapeProduct(url, xpath, callback, err) {
         const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
         const page = await browser.newPage();
         await page.goto(url);
-        await page.screenshot({ path: imagePath })
+        await page.screenshot({ path: "../public/images/insta.png" })
 
         const [el] = await page.$x(xpath);
         const src = await (await el.getProperty('src')).jsonValue();
